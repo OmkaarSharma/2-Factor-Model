@@ -648,8 +648,7 @@ Dynamics in Commodity Prices.* Management Science 46(7), 893–911.
 Gibson, R. and E. S. Schwartz (1990). *Stochastic Convenience Yield and the
 Pricing of Oil Contingent Claims.* Journal of Finance 45, 959–976.
 
-Harvey, A. C. (1989). *Forecasting, Structural Time Series Models and the Kalman
-Filter.* Cambridge University Press.
+---
 
 ## License
 
