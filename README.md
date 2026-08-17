@@ -460,6 +460,7 @@ Maximum-likelihood estimates, standard errors in parentheses.
 ![Parameter comparison across the three windows](figures/comparison_three_windows.png)
 
 
+
 **Left: estimated measurement-error standard deviation $\hat{s}_k$ by maturity
 slot. 
 Centre: model volatility term structure $\sigma_F(\tau)$ against realised
