@@ -530,7 +530,7 @@ Standardised one-step-ahead innovations $e_t = F_t^{-1/2} v_t$, `full` window:
   first-order autocorrelation up to 0.66 and cross-slot innovation correlation
   up to 0.39. The innovations are *not* independent.
 
-![Smoothed states and standardised innovations](figures/states_and_innovations.png)
+![Smoothed states and standardised innovations](figures/states_and_innovations.png.png)
 
 The last point is the honest limitation of the model, and it is reported rather
 than patched. Near-zero mean errors combined with heavily autocorrelated
