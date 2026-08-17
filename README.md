@@ -506,18 +506,23 @@ should be treated as parametric extrapolation, not a projection.
 
 ![Futures curve and volatility term structure](figures/fig2_fig3_futures_and_vol.png)
 
-*Left: the fitted futures curve $\ln F_{T,0}$ against expected spot prices
+
+
+**Left:** the fitted futures curve $\ln F_{T,0}$ against expected spot prices
 $\ln \mathbb{E}[S_T]$, with observed EEX quotes (×) and the model's geometric
-delivery-average fits (•), plus both long-run asymptote lines. Right: the model
-volatility term structure $\sigma_F(T)$, collapsing from $\sigma_F(0)$ toward
-$\sigma_\xi$ at the long end, with the annualised option volatility
-$\sigma_\phi(T,T) / \sqrt{T}$.*
+delivery-average fits (•), plus both long-run asymptote lines. 
+**Right:** the model volatility term structure $\sigma_F(T)$, collapsing from 
+$\sigma_F(0)$ toward $\sigma_\xi$ at the long end, with the annualised 
+option volatility $\sigma_\phi(T,T) / \sqrt{T}$.
 
 ![Probabilistic forecasts](figures/fig1_probabilistic_forecasts.png)
 
-*Left: model space, deseasonalised. Right: the same forecast with $\bar{g}$
-added back, in traded EUR/MWh. Both are anchored at the final observation of the
-estimation window; the horizontal axis is a forecast horizon, not a data range.*
+
+
+**Left:** model space, deseasonalised. 
+**Right:** the same forecast with $\bar{g}$ added back, in traded EUR/MWh. 
+Both are anchored at the final observation of the estimation window; the horizontal 
+axis is a forecast horizon, not a data range.*
 
 ---
 
