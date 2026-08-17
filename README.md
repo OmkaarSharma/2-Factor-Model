@@ -461,9 +461,11 @@ Maximum-likelihood estimates, standard errors in parentheses.
 
 
 
-**Left:** estimated measurement-error standard deviation $\hat{s}_k$ by maturity slot. 
-**Centre:** model volatility term structure $\sigma_F(\tau)$ against realised per-slot volatilities (crosses), roll transitions excluded. 
-**Right:** smoothed equilibrium price $e^{\hat{\xi}_{t\mid T}}$ on a log scale — `calm` and `full` are separately estimated yet nearly coincide over 2018–2021.
+<p>
+  <b>Left:</b> estimated measurement-error standard deviation <img src="https://render.githubusercontent.com/render/math?math=\color{white}\hat{s}_k"> by maturity slot. <br>
+  <b>Centre:</b> model volatility term structure <img src="https://render.githubusercontent.com/render/math?math=\color{white}\sigma_F(\tau)"> against realised per-slot volatilities (crosses), roll transitions excluded. <br>
+  <b>Right:</b> smoothed equilibrium price <img src="https://render.githubusercontent.com/render/math?math=\color{white}e^{\hat{\xi}_{t\mid T}}"> on a log scale — <code>calm</code> and <code>full</code> are separately estimated yet nearly coincide over 2018–2021.
+</p>
 
 All three Hessians are positive definite with no near-singular direction, so
 every parameter — including $\lambda_\chi$ and $\mu_\xi$, the weakly identified
