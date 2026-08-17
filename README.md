@@ -72,72 +72,102 @@ names:
 
 The log spot price decomposes into two latent factors,
 
-$$\ln S_t = \chi_t + \xi_t$$
+```math
+\ln S_t = \chi_t + \xi_t
+```
 
 where the short-term deviation reverts to zero as an Ornstein–Uhlenbeck process
 and the equilibrium level follows an arithmetic Brownian motion:
 
-$$d\chi_t = -\kappa \chi_t \, dt + \sigma_\chi \, dz_\chi$$
+```math
+d\chi_t = -\kappa \chi_t \, dt + \sigma_\chi \, dz_\chi
+```
 
-$$d\xi_t = \mu_\xi \, dt + \sigma_\xi \, dz_\xi \, , \qquad dz_\chi \, dz_\xi = \rho_{\chi\xi} \, dt$$
+```math
+d\xi_t = \mu_\xi \, dt + \sigma_\xi \, dz_\xi \, , \qquad dz_\chi \, dz_\xi = \rho_{\chi\xi} \, dt
+```
 
 Given $(\chi_0, \xi_0)$, the pair $(\chi_t, \xi_t)$ is jointly normal with
 
-$$\mathbb{E}\left[ (\chi_t, \xi_t) \right] = \left[ \, e^{-\kappa t}\chi_0, \;\; \xi_0 + \mu_\xi t \, \right]$$
+```math
+\mathbb{E}\left[ (\chi_t, \xi_t) \right] = \left[ \, e^{-\kappa t}\chi_0, \;\; \xi_0 + \mu_\xi t \, \right]
+```
 
-$$\mathrm{Cov}\left[ (\chi_t, \xi_t) \right] =
+```math
+\mathrm{Cov}\left[ (\chi_t, \xi_t) \right] =
 \begin{bmatrix}
 \left(1 - e^{-2\kappa t}\right) \dfrac{\sigma_\chi^{2}}{2\kappa} &
 \left(1 - e^{-\kappa t}\right) \dfrac{\rho_{\chi\xi}\sigma_\chi\sigma_\xi}{\kappa} \\
 \left(1 - e^{-\kappa t}\right) \dfrac{\rho_{\chi\xi}\sigma_\chi\sigma_\xi}{\kappa} &
 \sigma_\xi^{2} t
-\end{bmatrix}$$
+\end{bmatrix}
+```
 
 so that
 
-$$\mathbb{E}\left[ \ln S_t \right] = e^{-\kappa t}\chi_0 + \xi_0 + \mu_\xi t$$
+```math
+\mathbb{E}\left[ \ln S_t \right] = e^{-\kappa t}\chi_0 + \xi_0 + \mu_\xi t
+```
 
-$$\mathrm{Var}\left[ \ln S_t \right] = \left(1 - e^{-2\kappa t}\right)\frac{\sigma_\chi^{2}}{2\kappa} + \sigma_\xi^{2} t + 2\left(1 - e^{-\kappa t}\right)\frac{\rho_{\chi\xi}\sigma_\chi\sigma_\xi}{\kappa}$$
+```math
+\mathrm{Var}\left[ \ln S_t \right] = \left(1 - e^{-2\kappa t}\right)\frac{\sigma_\chi^{2}}{2\kappa} + \sigma_\xi^{2} t + 2\left(1 - e^{-\kappa t}\right)\frac{\rho_{\chi\xi}\sigma_\chi\sigma_\xi}{\kappa}
+```
 
 and, the spot price being lognormal,
 
-$$\ln \mathbb{E}\left[ S_t \right] = \mathbb{E}\left[ \ln S_t \right] + \tfrac{1}{2}\mathrm{Var}\left[ \ln S_t \right]$$
+```math
+\ln \mathbb{E}\left[ S_t \right] = \mathbb{E}\left[ \ln S_t \right] + \tfrac{1}{2}\mathrm{Var}\left[ \ln S_t \right]
+```
 
 ### Risk-neutral dynamics
 
 Two constant risk premia reduce the drifts:
 
-$$d\chi_t = \left( -\kappa\chi_t - \lambda_\chi \right) dt + \sigma_\chi \, dz_\chi^{*} \, , \qquad d\xi_t = \left( \mu_\xi - \lambda_\xi \right) dt + \sigma_\xi \, dz_\xi^{*}$$
+```math
+d\chi_t = \left( -\kappa\chi_t - \lambda_\chi \right) dt + \sigma_\chi \, dz_\chi^{*} \, , \qquad d\xi_t = \left( \mu_\xi - \lambda_\xi \right) dt + \sigma_\xi \, dz_\xi^{*}
+```
 
 Under $\mathbb{Q}$ the short-term deviation reverts to $-\lambda_\chi / \kappa$
 rather than zero, and the equilibrium drift becomes
 $\mu_\xi^{*} = \mu_\xi - \lambda_\xi$. The covariance matrix is unchanged, so
 
-$$\mathbb{E}^{*}\left[ \ln S_t \right] = e^{-\kappa t}\chi_0 + \xi_0 - \left(1 - e^{-\kappa t}\right)\frac{\lambda_\chi}{\kappa} + \mu_\xi^{*} t \, , \qquad \mathrm{Var}^{*}\left[ \ln S_t \right] = \mathrm{Var}\left[ \ln S_t \right]$$
+```math
+\mathbb{E}^{*}\left[ \ln S_t \right] = e^{-\kappa t}\chi_0 + \xi_0 - \left(1 - e^{-\kappa t}\right)\frac{\lambda_\chi}{\kappa} + \mu_\xi^{*} t \, , \qquad \mathrm{Var}^{*}\left[ \ln S_t \right] = \mathrm{Var}\left[ \ln S_t \right]
+```
 
 The implied risk premium in log price is
 
-$$\mathbb{E}\left[ \ln S_t \right] - \mathbb{E}^{*}\left[ \ln S_t \right] = \left(1 - e^{-\kappa t}\right)\frac{\lambda_\chi}{\kappa} + \lambda_\xi t$$
+```math
+\mathbb{E}\left[ \ln S_t \right] - \mathbb{E}^{*}\left[ \ln S_t \right] = \left(1 - e^{-\kappa t}\right)\frac{\lambda_\chi}{\kappa} + \lambda_\xi t
+```
 
 ### Futures valuation
 
 Futures prices are risk-neutral expected spot prices, so
 
-$$\ln F_{T,0} = \mathbb{E}^{*}\left[ \ln S_T \right] + \tfrac{1}{2}\mathrm{Var}^{*}\left[ \ln S_T \right] = e^{-\kappa T}\chi_0 + \xi_0 + A(T)$$
+```math
+\ln F_{T,0} = \mathbb{E}^{*}\left[ \ln S_T \right] + \tfrac{1}{2}\mathrm{Var}^{*}\left[ \ln S_T \right] = e^{-\kappa T}\chi_0 + \xi_0 + A(T)
+```
 
 with all maturity-dependent terms collected into
 
-$$A(T) = \mu_\xi^{*} T - \left(1 - e^{-\kappa T}\right)\frac{\lambda_\chi}{\kappa} + \tfrac{1}{2}\left[ \left(1 - e^{-2\kappa T}\right)\frac{\sigma_\chi^{2}}{2\kappa} + \sigma_\xi^{2} T + 2\left(1 - e^{-\kappa T}\right)\frac{\rho_{\chi\xi}\sigma_\chi\sigma_\xi}{\kappa} \right]$$
+```math
+A(T) = \mu_\xi^{*} T - \left(1 - e^{-\kappa T}\right)\frac{\lambda_\chi}{\kappa} + \tfrac{1}{2}\left[ \left(1 - e^{-2\kappa T}\right)\frac{\sigma_\chi^{2}}{2\kappa} + \sigma_\xi^{2} T + 2\left(1 - e^{-\kappa T}\right)\frac{\rho_{\chi\xi}\sigma_\chi\sigma_\xi}{\kappa} \right]
+```
 
 The instantaneous volatility of $\ln F_{T,0}$ is independent of the state:
 
-$$\sigma_F^{2}(T) = e^{-2\kappa T}\sigma_\chi^{2} + \sigma_\xi^{2} + 2 e^{-\kappa T}\rho_{\chi\xi}\sigma_\chi\sigma_\xi$$
+```math
+\sigma_F^{2}(T) = e^{-2\kappa T}\sigma_\chi^{2} + \sigma_\xi^{2} + 2 e^{-\kappa T}\rho_{\chi\xi}\sigma_\chi\sigma_\xi
+```
 
 which collapses from $\sqrt{\sigma_\chi^{2} + \sigma_\xi^{2} + 2\rho_{\chi\xi}\sigma_\chi\sigma_\xi}$
 at $T = 0$ to $\sigma_\xi$ as $T \to \infty$. For European options on futures the
 relevant quantity is
 
-$$\sigma_\phi^{2}(t,T) = e^{-2\kappa (T-t)}\left(1 - e^{-2\kappa t}\right)\frac{\sigma_\chi^{2}}{2\kappa} + \sigma_\xi^{2} t + 2 e^{-\kappa (T-t)}\left(1 - e^{-\kappa t}\right)\frac{\rho_{\chi\xi}\sigma_\chi\sigma_\xi}{\kappa}$$
+```math
+\sigma_\phi^{2}(t,T) = e^{-2\kappa (T-t)}\left(1 - e^{-2\kappa t}\right)\frac{\sigma_\chi^{2}}{2\kappa} + \sigma_\xi^{2} t + 2 e^{-\kappa (T-t)}\left(1 - e^{-\kappa t}\right)\frac{\rho_{\chi\xi}\sigma_\chi\sigma_\xi}{\kappa}
+```
 
 which is implemented in `cell_futures.py`.
 
@@ -256,14 +286,18 @@ because $Z_t$ and $d_t$ are evaluated at each observation's actual maturity.
 A Phelix month future settles against the *average* hourly spot over its
 delivery period $[T_1, T_2]$, so strictly
 
-$$F_t^{\text{flow}} = \sum_{u \in [T_1, T_2]} w_u \, F(t, u) \, , \qquad \sum_u w_u = 1$$
+```math
+F_t^{\text{flow}} = \sum_{u \in [T_1, T_2]} w_u \, F(t, u) \, , \qquad \sum_u w_u = 1
+```
 
 Taking logs of a sum of exponentials of the state is **not affine in**
 $(\chi_t, \xi_t)$, which would break the exactness of the linear Kalman filter.
 The geometric average *is* affine and therefore drops straight into the existing
 recursion:
 
-$$\ln F_t^{\text{geo}} = \left[ \sum_u w_u e^{-\kappa u} \right] \chi_t + \xi_t + \sum_u w_u A(u)$$
+```math
+\ln F_t^{\text{geo}} = \left[ \sum_u w_u e^{-\kappa u} \right] \chi_t + \xi_t + \sum_u w_u A(u)
+```
 
 with $w_u$ the DST-correct hour weights. Simulation at plausible power
 parameters puts the geometric approximation error at $3 \times 10^{-6}$ to
@@ -284,14 +318,18 @@ violating both the diagonal-$V$ and the iid assumptions.
 
 The spot price is therefore written as
 
-$$\ln S_u = g(u) + \chi_u + \xi_u \qquad \Longrightarrow \qquad \ln F(t,T) = \bar{g}(T) + e^{-\kappa\tau}\chi_t + \xi_t + A(\tau)$$
+```math
+\ln S_u = g(u) + \chi_u + \xi_u \qquad \Longrightarrow \qquad \ln F(t,T) = \bar{g}(T) + e^{-\kappa\tau}\chi_t + \xi_t + A(\tau)
+```
 
 with a mean-zero three-harmonic seasonal, hour-averaged over each contract's
 delivery period:
 
-$$\bar{g}(T_i) = \sum_{j=1}^{3} \left[ a_j \bar{c}_{ji} + b_j \bar{s}_{ji} \right] \, , \qquad
+```math
+\bar{g}(T_i) = \sum_{j=1}^{3} \left[ a_j \bar{c}_{ji} + b_j \bar{s}_{ji} \right] \, , \qquad
 \bar{c}_{ji} = \sum_u w_{iu} \cos\left( 2\pi j \varphi_u \right) \, , \qquad
-\bar{s}_{ji} = \sum_u w_{iu} \sin\left( 2\pi j \varphi_u \right)$$
+\bar{s}_{ji} = \sum_u w_{iu} \sin\left( 2\pi j \varphi_u \right)
+```
 
 where $\varphi_u$ is the position of delivery day $u$ within the year. The
 coefficients are estimated by a two-way fixed-effects regression with date
@@ -330,18 +368,26 @@ why $\bar{g}$ is fitted separately per window.
 With $x_t = \left[ \chi_t, \, \xi_t \right]'$ and $y_t$ the vector of
 deseasonalised log futures prices across the eight slots,
 
-$$x_t = c + G \, x_{t-1} + \omega_t \, , \qquad \omega_t \sim N(0, W)$$
+```math
+x_t = c + G \, x_{t-1} + \omega_t \, , \qquad \omega_t \sim N(0, W)
+```
 
-$$y_t = d_t + Z_t' \, x_t + v_t \, , \qquad v_t \sim N(0, V) \, , \qquad V = \mathrm{diag}\left( s_1^{2}, \dots, s_8^{2} \right)$$
+```math
+y_t = d_t + Z_t' \, x_t + v_t \, , \qquad v_t \sim N(0, V) \, , \qquad V = \mathrm{diag}\left( s_1^{2}, \dots, s_8^{2} \right)
+```
 
-$$c = \begin{bmatrix} 0 \\ \mu_\xi \Delta t \end{bmatrix} \, , \qquad
+```math
+c = \begin{bmatrix} 0 \\ \mu_\xi \Delta t \end{bmatrix} \, , \qquad
 G = \begin{bmatrix} e^{-\kappa \Delta t} & 0 \\ 0 & 1 \end{bmatrix} \, , \qquad
-W = \mathrm{Cov}\left[ (\chi_{\Delta t}, \xi_{\Delta t}) \right]$$
+W = \mathrm{Cov}\left[ (\chi_{\Delta t}, \xi_{\Delta t}) \right]
+```
 
 with $d_t$ and $Z_t$ given by the geometric delivery form. The likelihood
 follows from the prediction-error decomposition,
 
-$$-2 \ln L(\theta) = \sum_t \left[ n \ln 2\pi + \ln \left| F_t \right| + v_t' F_t^{-1} v_t \right] \, , \qquad F_t = Z_t' R_t Z_t + V$$
+```math
+-2 \ln L(\theta) = \sum_t \left[ n \ln 2\pi + \ln \left| F_t \right| + v_t' F_t^{-1} v_t \right] \, , \qquad F_t = Z_t' R_t Z_t + V
+```
 
 ### Flow
 
@@ -648,6 +694,9 @@ Dynamics in Commodity Prices.* Management Science 46(7), 893–911.
 Gibson, R. and E. S. Schwartz (1990). *Stochastic Convenience Yield and the
 Pricing of Oil Contingent Claims.* Journal of Finance 45, 959–976.
 
+Harvey, A. C. (1989). *Forecasting, Structural Time Series Models and the Kalman
+Filter.* Cambridge University Press.
+
 ---
 
 ## License
@@ -660,10 +709,8 @@ This project is for academic and educational purposes.
 
 **Mudigonda Omkaar Sharma**  
 B.Tech Electrical Engineering, Nirma University  
-Research Interests: Power System Economics, Energy Markets, Stochastic Processes  
+Research Interests: Power System Economics, Energy Markets, Stochastic Processes
+
 [LinkedIn](https://www.linkedin.com/in/omkaar-sharma-b2b179200/) · [GitHub](https://github.com/Musashi1970)
 
-*Independent research project in energy market stochastic modeling.  
-
-Harvey, A. C. (1989). *Forecasting, Structural Time Series Models and the Kalman
-Filter.* Cambridge University Press.
+*Independent research project in energy market stochastic modelling.*
