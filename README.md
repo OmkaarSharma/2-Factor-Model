@@ -85,7 +85,7 @@ Given $(\chi_0, \xi_0)$, the pair $(\chi_t, \xi_t)$ is jointly normal with
 
 $$\mathbb{E}\left[ (\chi_t, \xi_t) \right] = \left[ \\, e^{-\kappa t}\chi_0, \\;\\; \xi_0 + \mu_\xi t \\, \right]$$
 
-$$\operatorname{Cov}\left[ (\chi_t, \xi_t) \right] =
+$$\mathrm{Cov}\left[ (\chi_t, \xi_t) \right] =
 \begin{bmatrix}
 \left(1 - e^{-2\kappa t}\right) \dfrac{\sigma_\chi^{2}}{2\kappa} &
 \left(1 - e^{-\kappa t}\right) \dfrac{\rho_{\chi\xi}\sigma_\chi\sigma_\xi}{\kappa} \\\\
@@ -97,11 +97,11 @@ so that
 
 $$\mathbb{E}\left[ \ln S_t \right] = e^{-\kappa t}\chi_0 + \xi_0 + \mu_\xi t$$
 
-$$\operatorname{Var}\left[ \ln S_t \right] = \left(1 - e^{-2\kappa t}\right)\frac{\sigma_\chi^{2}}{2\kappa} + \sigma_\xi^{2} t + 2\left(1 - e^{-\kappa t}\right)\frac{\rho_{\chi\xi}\sigma_\chi\sigma_\xi}{\kappa}$$
+$$\mathrm{Var}\left[ \ln S_t \right] = \left(1 - e^{-2\kappa t}\right)\frac{\sigma_\chi^{2}}{2\kappa} + \sigma_\xi^{2} t + 2\left(1 - e^{-\kappa t}\right)\frac{\rho_{\chi\xi}\sigma_\chi\sigma_\xi}{\kappa}$$
 
 and, the spot price being lognormal,
 
-$$\ln \mathbb{E}\left[ S_t \right] = \mathbb{E}\left[ \ln S_t \right] + \tfrac{1}{2}\operatorname{Var}\left[ \ln S_t \right]$$
+$$\ln \mathbb{E}\left[ S_t \right] = \mathbb{E}\left[ \ln S_t \right] + \tfrac{1}{2}\mathrm{Var}\left[ \ln S_t \right]$$
 
 ### Risk-neutral dynamics
 
@@ -113,7 +113,7 @@ Under $\mathbb{Q}$ the short-term deviation reverts to $-\lambda_\chi / \kappa$
 rather than zero, and the equilibrium drift becomes
 $\mu_\xi^{*} = \mu_\xi - \lambda_\xi$. The covariance matrix is unchanged, so
 
-$$\mathbb{E}^{*}\left[ \ln S_t \right] = e^{-\kappa t}\chi_0 + \xi_0 - \left(1 - e^{-\kappa t}\right)\frac{\lambda_\chi}{\kappa} + \mu_\xi^{*} t \\, , \qquad \operatorname{Var}^{*}\left[ \ln S_t \right] = \operatorname{Var}\left[ \ln S_t \right]$$
+$$\mathbb{E}^{*}\left[ \ln S_t \right] = e^{-\kappa t}\chi_0 + \xi_0 - \left(1 - e^{-\kappa t}\right)\frac{\lambda_\chi}{\kappa} + \mu_\xi^{*} t \\, , \qquad \mathrm{Var}^{*}\left[ \ln S_t \right] = \mathrm{Var}\left[ \ln S_t \right]$$
 
 The implied risk premium in log price is
 
@@ -123,7 +123,7 @@ $$\mathbb{E}\left[ \ln S_t \right] - \mathbb{E}^{*}\left[ \ln S_t \right] = \lef
 
 Futures prices are risk-neutral expected spot prices, so
 
-$$\ln F_{T,0} = \mathbb{E}^{*}\left[ \ln S_T \right] + \tfrac{1}{2}\operatorname{Var}^{*}\left[ \ln S_T \right] = e^{-\kappa T}\chi_0 + \xi_0 + A(T)$$
+$$\ln F_{T,0} = \mathbb{E}^{*}\left[ \ln S_T \right] + \tfrac{1}{2}\mathrm{Var}^{*}\left[ \ln S_T \right] = e^{-\kappa T}\chi_0 + \xi_0 + A(T)$$
 
 with all maturity-dependent terms collected into
 
@@ -332,11 +332,11 @@ deseasonalised log futures prices across the eight slots,
 
 $$x_t = c + G \\, x_{t-1} + \omega_t \\, , \qquad \omega_t \sim N(0, W)$$
 
-$$y_t = d_t + Z_t' \\, x_t + v_t \\, , \qquad v_t \sim N(0, V) \\, , \qquad V = \operatorname{diag}\left( s_1^{2}, \dots, s_8^{2} \right)$$
+$$y_t = d_t + Z_t' \\, x_t + v_t \\, , \qquad v_t \sim N(0, V) \\, , \qquad V = \mathrm{diag}\left( s_1^{2}, \dots, s_8^{2} \right)$$
 
 $$c = \begin{bmatrix} 0 \\\\ \mu_\xi \Delta t \end{bmatrix} \\, , \qquad
 G = \begin{bmatrix} e^{-\kappa \Delta t} & 0 \\\\ 0 & 1 \end{bmatrix} \\, , \qquad
-W = \operatorname{Cov}\left[ (\chi_{\Delta t}, \xi_{\Delta t}) \right]$$
+W = \mathrm{Cov}\left[ (\chi_{\Delta t}, \xi_{\Delta t}) \right]$$
 
 with $d_t$ and $Z_t$ given by the geometric delivery form. The likelihood
 follows from the prediction-error decomposition,
