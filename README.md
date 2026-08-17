@@ -77,18 +77,18 @@ $$\ln S_t = \chi_t + \xi_t$$
 where the short-term deviation reverts to zero as an Ornstein–Uhlenbeck process
 and the equilibrium level follows an arithmetic Brownian motion:
 
-$$d\chi_t = -\kappa \chi_t \\, dt + \sigma_\chi \\, dz_\chi$$
+$$d\chi_t = -\kappa \chi_t \, dt + \sigma_\chi \, dz_\chi$$
 
-$$d\xi_t = \mu_\xi \\, dt + \sigma_\xi \\, dz_\xi \\, , \qquad dz_\chi \\, dz_\xi = \rho_{\chi\xi} \\, dt$$
+$$d\xi_t = \mu_\xi \, dt + \sigma_\xi \, dz_\xi \, , \qquad dz_\chi \, dz_\xi = \rho_{\chi\xi} \, dt$$
 
 Given $(\chi_0, \xi_0)$, the pair $(\chi_t, \xi_t)$ is jointly normal with
 
-$$\mathbb{E}\left[ (\chi_t, \xi_t) \right] = \left[ \\, e^{-\kappa t}\chi_0, \\;\\; \xi_0 + \mu_\xi t \\, \right]$$
+$$\mathbb{E}\left[ (\chi_t, \xi_t) \right] = \left[ \, e^{-\kappa t}\chi_0, \;\; \xi_0 + \mu_\xi t \, \right]$$
 
 $$\mathrm{Cov}\left[ (\chi_t, \xi_t) \right] =
 \begin{bmatrix}
 \left(1 - e^{-2\kappa t}\right) \dfrac{\sigma_\chi^{2}}{2\kappa} &
-\left(1 - e^{-\kappa t}\right) \dfrac{\rho_{\chi\xi}\sigma_\chi\sigma_\xi}{\kappa} \\\\
+\left(1 - e^{-\kappa t}\right) \dfrac{\rho_{\chi\xi}\sigma_\chi\sigma_\xi}{\kappa} \\
 \left(1 - e^{-\kappa t}\right) \dfrac{\rho_{\chi\xi}\sigma_\chi\sigma_\xi}{\kappa} &
 \sigma_\xi^{2} t
 \end{bmatrix}$$
@@ -107,13 +107,13 @@ $$\ln \mathbb{E}\left[ S_t \right] = \mathbb{E}\left[ \ln S_t \right] + \tfrac{1
 
 Two constant risk premia reduce the drifts:
 
-$$d\chi_t = \left( -\kappa\chi_t - \lambda_\chi \right) dt + \sigma_\chi \\, dz_\chi^{*} \\, , \qquad d\xi_t = \left( \mu_\xi - \lambda_\xi \right) dt + \sigma_\xi \\, dz_\xi^{*}$$
+$$d\chi_t = \left( -\kappa\chi_t - \lambda_\chi \right) dt + \sigma_\chi \, dz_\chi^{*} \, , \qquad d\xi_t = \left( \mu_\xi - \lambda_\xi \right) dt + \sigma_\xi \, dz_\xi^{*}$$
 
 Under $\mathbb{Q}$ the short-term deviation reverts to $-\lambda_\chi / \kappa$
 rather than zero, and the equilibrium drift becomes
 $\mu_\xi^{*} = \mu_\xi - \lambda_\xi$. The covariance matrix is unchanged, so
 
-$$\mathbb{E}^{*}\left[ \ln S_t \right] = e^{-\kappa t}\chi_0 + \xi_0 - \left(1 - e^{-\kappa t}\right)\frac{\lambda_\chi}{\kappa} + \mu_\xi^{*} t \\, , \qquad \mathrm{Var}^{*}\left[ \ln S_t \right] = \mathrm{Var}\left[ \ln S_t \right]$$
+$$\mathbb{E}^{*}\left[ \ln S_t \right] = e^{-\kappa t}\chi_0 + \xi_0 - \left(1 - e^{-\kappa t}\right)\frac{\lambda_\chi}{\kappa} + \mu_\xi^{*} t \, , \qquad \mathrm{Var}^{*}\left[ \ln S_t \right] = \mathrm{Var}\left[ \ln S_t \right]$$
 
 The implied risk premium in log price is
 
@@ -256,7 +256,7 @@ because $Z_t$ and $d_t$ are evaluated at each observation's actual maturity.
 A Phelix month future settles against the *average* hourly spot over its
 delivery period $[T_1, T_2]$, so strictly
 
-$$F_t^{\text{flow}} = \sum_{u \in [T_1, T_2]} w_u \\, F(t, u) \\, , \qquad \sum_u w_u = 1$$
+$$F_t^{\text{flow}} = \sum_{u \in [T_1, T_2]} w_u \, F(t, u) \, , \qquad \sum_u w_u = 1$$
 
 Taking logs of a sum of exponentials of the state is **not affine in**
 $(\chi_t, \xi_t)$, which would break the exactness of the linear Kalman filter.
@@ -289,8 +289,8 @@ $$\ln S_u = g(u) + \chi_u + \xi_u \qquad \Longrightarrow \qquad \ln F(t,T) = \ba
 with a mean-zero three-harmonic seasonal, hour-averaged over each contract's
 delivery period:
 
-$$\bar{g}(T_i) = \sum_{j=1}^{3} \left[ a_j \bar{c}_{ji} + b_j \bar{s}_{ji} \right] \\, , \qquad
-\bar{c}_{ji} = \sum_u w_{iu} \cos\left( 2\pi j \varphi_u \right) \\, , \qquad
+$$\bar{g}(T_i) = \sum_{j=1}^{3} \left[ a_j \bar{c}_{ji} + b_j \bar{s}_{ji} \right] \, , \qquad
+\bar{c}_{ji} = \sum_u w_{iu} \cos\left( 2\pi j \varphi_u \right) \, , \qquad
 \bar{s}_{ji} = \sum_u w_{iu} \sin\left( 2\pi j \varphi_u \right)$$
 
 where $\varphi_u$ is the position of delivery day $u$ within the year. The
@@ -327,21 +327,21 @@ why $\bar{g}$ is fitted separately per window.
 
 ## State-space form and estimation
 
-With $x_t = \left[ \chi_t, \\, \xi_t \right]'$ and $y_t$ the vector of
+With $x_t = \left[ \chi_t, \, \xi_t \right]'$ and $y_t$ the vector of
 deseasonalised log futures prices across the eight slots,
 
-$$x_t = c + G \\, x_{t-1} + \omega_t \\, , \qquad \omega_t \sim N(0, W)$$
+$$x_t = c + G \, x_{t-1} + \omega_t \, , \qquad \omega_t \sim N(0, W)$$
 
-$$y_t = d_t + Z_t' \\, x_t + v_t \\, , \qquad v_t \sim N(0, V) \\, , \qquad V = \mathrm{diag}\left( s_1^{2}, \dots, s_8^{2} \right)$$
+$$y_t = d_t + Z_t' \, x_t + v_t \, , \qquad v_t \sim N(0, V) \, , \qquad V = \mathrm{diag}\left( s_1^{2}, \dots, s_8^{2} \right)$$
 
-$$c = \begin{bmatrix} 0 \\\\ \mu_\xi \Delta t \end{bmatrix} \\, , \qquad
-G = \begin{bmatrix} e^{-\kappa \Delta t} & 0 \\\\ 0 & 1 \end{bmatrix} \\, , \qquad
+$$c = \begin{bmatrix} 0 \\ \mu_\xi \Delta t \end{bmatrix} \, , \qquad
+G = \begin{bmatrix} e^{-\kappa \Delta t} & 0 \\ 0 & 1 \end{bmatrix} \, , \qquad
 W = \mathrm{Cov}\left[ (\chi_{\Delta t}, \xi_{\Delta t}) \right]$$
 
 with $d_t$ and $Z_t$ given by the geometric delivery form. The likelihood
 follows from the prediction-error decomposition,
 
-$$-2 \ln L(\theta) = \sum_t \left[ n \ln 2\pi + \ln \left| F_t \right| + v_t' F_t^{-1} v_t \right] \\, , \qquad F_t = Z_t' R_t Z_t + V$$
+$$-2 \ln L(\theta) = \sum_t \left[ n \ln 2\pi + \ln \left| F_t \right| + v_t' F_t^{-1} v_t \right] \, , \qquad F_t = Z_t' R_t Z_t + V$$
 
 ### Flow
 
@@ -541,7 +541,7 @@ replication).
 panels. Red dashed: the Monte Carlo mean.*
 
 100/100 replications converged. Biases are small — the largest are $\kappa$ at
-$+3.1\\%$ and $\lambda_\chi$ at $+8.1\\%$, both marginally significant at
+$+3.1\%$ and $\lambda_\chi$ at $+8.1\%$, both marginally significant at
 $R = 100$ and consistent with the known finite-sample bias of mean-reversion
 parameters. Every sd ratio falls in $0.76$–$1.02$, so the Hessian standard
 errors are *not* optimistic; if anything they are mildly conservative.
@@ -648,7 +648,8 @@ Dynamics in Commodity Prices.* Management Science 46(7), 893–911.
 Gibson, R. and E. S. Schwartz (1990). *Stochastic Convenience Yield and the
 Pricing of Oil Contingent Claims.* Journal of Finance 45, 959–976.
 
----
+Harvey, A. C. (1989). *Forecasting, Structural Time Series Models and the Kalman
+Filter.* Cambridge University Press.
 
 ## License
 
