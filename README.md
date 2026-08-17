@@ -473,22 +473,11 @@ indeterminacy argument bites on the cross-section.
 
 **Findings.**
 
-*$\rho_{\chi\xi}$ changes sign across the crisis.* $+0.52$ before, $-0.22$
-after. Pre-crisis, a shock lifting the front of the curve lifted the whole
-curve; post-crisis the two factors move against each other. This is the most
-striking result in the table.
+*<i>ρ<sub>χξ</sub></i> changes sign across the crisis.* +0.52 before, -0.22 after. Pre-crisis, a shock lifting the front of the curve lifted the whole curve; post-crisis the two factors move against each other. This is the most striking result in the table.
 
-*Mean reversion slows.* Half-life $2.4 \to 5.0$ months between the two clean
-regimes. The `full` value of 7.3 months should not be read structurally — a
-single $\kappa$ fitted across a regime break is biased downward, because the
-2021–22 level shift resembles one very slow-reverting deviation.
+*Mean reversion slows.* Half-life 2.4 → 5.0 months between the two clean regimes. The `full` value of 7.3 months should not be read structurally — a single <i>κ</i> fitted across a regime break is biased downward, because the 2021–22 level shift resembles one very slow-reverting deviation.
 
-*$\lambda_\chi$ is negative pre-crisis.* Under $\mathbb{Q}$ the short-term
-deviation reverts to $-\lambda_\chi / \kappa = +0.091$ rather than zero, so the
-front of the futures curve sits above where the $\mathbb{P}$-measure would place
-it. This is the opposite sign to the oil result in the original paper and is
-consistent with hedging pressure from load-serving entities that are
-structurally long forward demand.
+*<i>λ<sub>χ</sub></i> is negative pre-crisis.* Under ℚ the short-term deviation reverts to -<i>λ<sub>χ</sub></i> / <i>κ</i> = +0.091 rather than zero, so the front of the futures curve sits above where the ℙ-measure would place it. This is the opposite sign to the oil result in the original paper and is consistent with hedging pressure from load-serving entities that are structurally long forward demand.
 
 *The long-run drift is not stable and should not be extrapolated.* $\mu_\xi$
 comes out $+0.216$ on `calm` — almost exactly the realised drift of the smoothed
