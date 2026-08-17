@@ -460,11 +460,11 @@ Maximum-likelihood estimates, standard errors in parentheses.
 ![Parameter comparison across the three windows](figures/comparison_three_windows.png)
 
 
-*Left: estimated measurement-error standard deviation $\hat{s}_k$ by maturity
-slot. Centre: model volatility term structure $\sigma_F(\tau)$ against realised
-per-slot volatilities (crosses), roll transitions excluded. Right: smoothed
-equilibrium price $e^{\hat{\xi}_{t \mid T}}$ on a log scale — `calm` and `full` are
-separately estimated yet nearly coincide over 2018–2021.*
+**Left:** estimated measurement-error standard deviation $\hat{s}_k$ by maturity
+slot. **Centre:** model volatility term structure $\sigma_F(\tau)$ against realised
+per-slot volatilities (crosses), roll transitions excluded. **Right:** smoothed
+equilibrium price $e^{\hat{\xi}_{t \mid T}}$ on a log scale — `calm` and `full`
+are separately estimated yet nearly coincide over 2018–2021.
 
 All three Hessians are positive definite with no near-singular direction, so
 every parameter — including $\lambda_\chi$ and $\mu_\xi$, the weakly identified
@@ -533,7 +533,7 @@ Standardised one-step-ahead innovations $e_t = F_t^{-1/2} v_t$, `full` window:
   first-order autocorrelation up to 0.66 and cross-slot innovation correlation
   up to 0.39. The innovations are *not* independent.
 
-![Smoothed states and standardised innovations](figures/states_and_innovations.png)
+![Smoothed states and standardised innovations](figures/states_and_innovations.png.png)
 
 The last point is the honest limitation of the model, and it is reported rather
 than patched. Near-zero mean errors combined with heavily autocorrelated
