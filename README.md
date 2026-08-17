@@ -459,6 +459,7 @@ Maximum-likelihood estimates, standard errors in parentheses.
 
 ![Parameter comparison across the three windows](figures/comparison_three_windows.png)
 
+
 *Left: estimated measurement-error standard deviation $\hat{s}_k$ by maturity
 slot. Centre: model volatility term structure $\sigma_F(\tau)$ against realised
 per-slot volatilities (crosses), roll transitions excluded. Right: smoothed
@@ -512,7 +513,7 @@ volatility term structure $\sigma_F(T)$, collapsing from $\sigma_F(0)$ toward
 $\sigma_\xi$ at the long end, with the annualised option volatility
 $\sigma_\phi(T,T) / \sqrt{T}$.*
 
-![Probabilistic forecasts](figures/fig1_probabilistic_forecasts.png)
+![Probabilistic forecasts](figures/fig1_probabilistic_forecasts.png.png)
 
 *Left: model space, deseasonalised. Right: the same forecast with $\bar{g}$
 added back, in traded EUR/MWh. Both are anchored at the final observation of the
