@@ -591,8 +591,10 @@ replication).
 
 ![Simulate-and-recover parameter distributions](figures/monte_carlo_recovery.png)
 
-*$R = 100$ replications. Black line: the fitted value used to generate the
-panels. Red dashed: the Monte Carlo mean.*
+
+
+**$R = 100$ replications. Black line: the fitted value used to generate the
+panels. Red dashed: the Monte Carlo mean.**
 
 100/100 replications converged. Biases are small — the largest are $\kappa$ at
 $+3.1\%$ and $\lambda_\chi$ at $+8.1\%$, both marginally significant at
