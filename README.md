@@ -459,11 +459,14 @@ Maximum-likelihood estimates, standard errors in parentheses.
 
 ![Parameter comparison across the three windows](figures/comparison_three_windows.png)
 
-*Left: estimated measurement-error standard deviation $\hat{s}_k$ by maturity
-slot. Centre: model volatility term structure $\sigma_F(\tau)$ against realised
-per-slot volatilities (crosses), roll transitions excluded. Right: smoothed
-equilibrium price $e^{\hat{\xi}_{t \mid T}}$ on a log scale — `calm` and `full` are
-separately estimated yet nearly coincide over 2018–2021.*
+
+
+**Left: estimated measurement-error standard deviation $\hat{s}_k$ by maturity
+slot. 
+Centre: model volatility term structure $\sigma_F(\tau)$ against realised
+per-slot volatilities (crosses), roll transitions excluded.
+Right: smoothed equilibrium price $e^{\hat{\xi}_{t \mid T}}$ on a log scale 
+— `calm` and `full` are separately estimated yet nearly coincide over 2018–2021.**
 
 All three Hessians are positive definite with no near-singular direction, so
 every parameter — including $\lambda_\chi$ and $\mu_\xi$, the weakly identified
@@ -505,18 +508,23 @@ should be treated as parametric extrapolation, not a projection.
 
 ![Futures curve and volatility term structure](figures/fig2_fig3_futures_and_vol.png)
 
-*Left: the fitted futures curve $\ln F_{T,0}$ against expected spot prices
+
+
+**Left: the fitted futures curve $\ln F_{T,0}$ against expected spot prices
 $\ln \mathbb{E}[S_T]$, with observed EEX quotes (×) and the model's geometric
-delivery-average fits (•), plus both long-run asymptote lines. Right: the model
-volatility term structure $\sigma_F(T)$, collapsing from $\sigma_F(0)$ toward
-$\sigma_\xi$ at the long end, with the annualised option volatility
-$\sigma_\phi(T,T) / \sqrt{T}$.*
+delivery-average fits (•), plus both long-run asymptote lines. 
+Right: the model volatility term structure $\sigma_F(T)$, collapsing from 
+$\sigma_F(0)$ toward $\sigma_\xi$ at the long end, with the annualised 
+option volatility $\sigma_\phi(T,T) / \sqrt{T}$.**
 
 ![Probabilistic forecasts](figures/fig1_probabilistic_forecasts.png)
 
-*Left: model space, deseasonalised. Right: the same forecast with $\bar{g}$
-added back, in traded EUR/MWh. Both are anchored at the final observation of the
-estimation window; the horizontal axis is a forecast horizon, not a data range.*
+
+
+**Left: model space, deseasonalised. 
+Right: the same forecast with $\bar{g}$ added back, in traded EUR/MWh. 
+Both are anchored at the final observation of the estimation window; the horizontal 
+axis is a forecast horizon, not a data range.**
 
 ---
 
@@ -532,7 +540,7 @@ Standardised one-step-ahead innovations $e_t = F_t^{-1/2} v_t$, `full` window:
   first-order autocorrelation up to 0.66 and cross-slot innovation correlation
   up to 0.39. The innovations are *not* independent.
 
-![Smoothed states and standardised innovations](figures/states_and_innovations.png)
+![Smoothed states and standardised innovations](figures/states_and_innovations.png.png)
 
 The last point is the honest limitation of the model, and it is reported rather
 than patched. Near-zero mean errors combined with heavily autocorrelated
@@ -585,8 +593,10 @@ replication).
 
 ![Simulate-and-recover parameter distributions](figures/monte_carlo_recovery.png)
 
-*$R = 100$ replications. Black line: the fitted value used to generate the
-panels. Red dashed: the Monte Carlo mean.*
+
+
+**$R = 100$ replications. Black line: the fitted value used to generate the
+panels. Red dashed: the Monte Carlo mean.**
 
 100/100 replications converged. Biases are small — the largest are $\kappa$ at
 $+3.1\%$ and $\lambda_\chi$ at $+8.1\%$, both marginally significant at
