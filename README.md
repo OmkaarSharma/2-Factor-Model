@@ -365,7 +365,7 @@ why $\bar{g}$ is fitted separately per window.
 
 ## State-space form and estimation
 
-With $x_t = \left[ \chi_t, \, \xi_t \right]'$ and $y_t$ the vector of
+With $x_t = \left[ \chi_t, \, \xi_t \right]^{\top}$ and $y_t$ the vector of
 deseasonalised log futures prices across the eight slots,
 
 ```math
@@ -373,7 +373,7 @@ x_t = c + G \, x_{t-1} + \omega_t \, , \qquad \omega_t \sim N(0, W)
 ```
 
 ```math
-y_t = d_t + Z_t' \, x_t + v_t \, , \qquad v_t \sim N(0, V) \, , \qquad V = \mathrm{diag}\left( s_1^{2}, \dots, s_8^{2} \right)
+y_t = d_t + Z_t^{\top} \, x_t + v_t \, , \qquad v_t \sim N(0, V) \, , \qquad V = \mathrm{diag}\left( s_1^{2}, \dots, s_8^{2} \right)
 ```
 
 ```math
@@ -386,7 +386,9 @@ with $d_t$ and $Z_t$ given by the geometric delivery form. The likelihood
 follows from the prediction-error decomposition,
 
 ```math
--2 \ln L(\theta) = \sum_t \left[ n \ln 2\pi + \ln \left| F_t \right| + v_t' F_t^{-1} v_t \right] \, , \qquad F_t = Z_t' R_t Z_t + V
+-2 \ln L(\theta) \;=\; \sum_{t} \Big[\, n \ln 2\pi \;+\; \ln \det F_t \;+\; v_t^{\top} F_t^{-1} v_t \,\Big]
+\qquad\text{where}\qquad
+F_t = Z_t^{\top} R_t Z_t + V
 ```
 
 ### Flow
@@ -460,7 +462,7 @@ Maximum-likelihood estimates, standard errors in parentheses.
 *Left: estimated measurement-error standard deviation $\hat{s}_k$ by maturity
 slot. Centre: model volatility term structure $\sigma_F(\tau)$ against realised
 per-slot volatilities (crosses), roll transitions excluded. Right: smoothed
-equilibrium price $e^{\hat{\xi}_{t|T}}$ on a log scale — `calm` and `full` are
+equilibrium price $e^{\hat{\xi}_{t \mid T}}$ on a log scale — `calm` and `full` are
 separately estimated yet nearly coincide over 2018–2021.*
 
 All three Hessians are positive definite with no near-singular direction, so
@@ -530,7 +532,7 @@ Standardised one-step-ahead innovations $e_t = F_t^{-1/2} v_t$, `full` window:
   first-order autocorrelation up to 0.66 and cross-slot innovation correlation
   up to 0.39. The innovations are *not* independent.
 
-![Smoothed states and standardised innovations](figures/states_and_innovations.png.png)
+![Smoothed states and standardised innovations](figures/states_and_innovations.png)
 
 The last point is the honest limitation of the model, and it is reported rather
 than patched. Near-zero mean errors combined with heavily autocorrelated
